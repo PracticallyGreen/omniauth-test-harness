@@ -1,0 +1,9 @@
+<% if @strategies.any? %>
+<ul>
+  <% @strategies.each do |strategy| %>
+  <li><%= link_to "Login with #{strategy.name.split('::').last}", strategy.new(request.env).request_path %></li>
+  <% end %>
+</ul>
+<% elsif %>
+<p class='error'>No OmniAuth strategies defined.</p>
+<% end %>
