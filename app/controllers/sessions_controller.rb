@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
   end
 
   def create
+    unless params['SAMLResponse'].blank?
+      Rails.logger.info Base64.decode64(params['SAMLResponse'])
+    end
+
     @omniauth = request.env['omniauth.auth'].to_hash
     flash.now[:notice] = "OmniAuth authentication successful."
   end
