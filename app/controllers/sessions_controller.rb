@@ -5,7 +5,10 @@ class SessionsController < ApplicationController
 
   def create
     unless params['SAMLResponse'].blank?
-      Rails.logger.info Base64.decode64(params['SAMLResponse'])
+      decoded = Base64.decode64(params['SAMLResponse'])
+      saml_assertion = SamlAssertion.create(:saml_response => decoded)
+      Rails.logger.info "saved SamlAssertion id #{saml_assertion.id}"
+      Rails.logger.info decoded
     end
 
     @omniauth = request.env['omniauth.auth'].to_hash
