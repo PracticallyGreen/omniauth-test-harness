@@ -36,7 +36,7 @@ This application can also be deployed to [Heroku](http://www.heroku.com/).
 
 ## Authors
 
-Authored and maintained by [Rajiv Aaron Manglani](http://www.rajivmanglani.com/).
+Authored by [Rajiv Aaron Manglani](http://www.rajivmanglani.com/).
 
 Inspired by [sample-saml-strategy](https://github.com/raecoo/sample-saml-strategy) from Raecoo Cao.
 
